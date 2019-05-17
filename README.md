@@ -3,6 +3,13 @@
 
 ***ALWAYS DEVELOP IN THE TESTNET!***
 
+to install
+
+    gem "xmrto"
+
+    
+
+
 default the gem wil run in `:testnet` mode. http://test.xmr.to. However, this version of xmr.to is running on the stagenet
 
     Xmrto.config.network = :testnet #livenet
