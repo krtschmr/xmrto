@@ -1,3 +1,3 @@
 module Xmrto
-  VERSION = "0.0.3"
+  VERSION = "0.4.1"
 end

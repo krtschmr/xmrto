@@ -4,7 +4,7 @@ module Xmrto
     clazz = "class Error#{i.to_s.rjust(3, "0")} < StandardError; end"
     eval(clazz)
   end
-  
+
  class Transfer
 
 
@@ -18,6 +18,10 @@ module Xmrto
 
     def self.create(btc_address, btc_amount)
       new.create(btc_address, btc_amount)
+    end
+
+    def self.status(uuid)
+      new(uuid).update
     end
 
     def create(btc_address, btc_amount)

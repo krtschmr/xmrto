@@ -7,7 +7,7 @@ to install
 
     gem "xmrto"
 
-    
+
 
 
 default the gem wil run in `:testnet` mode. http://test.xmr.to. However, this version of xmr.to is running on the stagenet
@@ -27,7 +27,12 @@ To work with an existing transfer
     transfer = Xmrto::Transfer.new("xmrto-AWYXfW")
     => #<Xmrto::Transfer:0x000055a7dbec3000 @uuid="xmrto-AWYXfW">
     transfer.update
-	=> "BTC_SENT"
+	  => "BTC_SENT"
+
+    # or just get the state
+    Xmrto::Transfer.status("xmrto-AWYXfW")
+    => "UNPAID"
+
 
 
 
