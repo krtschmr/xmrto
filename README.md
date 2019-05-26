@@ -14,6 +14,13 @@ default the gem wil run in `:testnet` mode. http://test.xmr.to. However, this ve
 
     Xmrto.config.network = :testnet #livenet
 
+
+To get a quote:
+
+    Xmrto::Quote.get
+    => {"zero_conf_enabled"=>true, "price"=>0.010802, "upper_limit"=>1.468, "lower_limit"=>0.001, "zero_conf_max_amount"=>0.1}
+
+
 To create a transfer, simply call
 
     transfer = Xmrto::Transfer.create("mqm6GJzsmzvwqPbH5p7tKrRRdHrMkmRXjS", 0.01333)

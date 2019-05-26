@@ -8,13 +8,13 @@ module Xmrto
  class Transfer
 
 
-    attr_accessor :uuid, :xmr_price_btc, :state, :btc_amount, :btc_dest_address, :xmr_required_amount, :xmr_receiving_address,
-    :xmr_receiving_integrated_address, :xmr_required_payment_id_long, :xmr_required_payment_id_short, :created_at, :expires_at, :seconds_till_timeout, :xmr_amount_total, :xmr_amount_remaining, :xmr_num_confirmations_remaining, :xmr_recommended_mixin, :btc_num_confirmations_before_purge, :btc_num_confirmations, :btc_transaction_id
+   attr_accessor :uuid, :xmr_price_btc, :state, :btc_amount, :btc_dest_address, :xmr_required_amount, :xmr_receiving_address,
+   :xmr_receiving_integrated_address, :xmr_required_payment_id_long, :xmr_required_payment_id_short, :created_at, :expires_at, :seconds_till_timeout, :xmr_amount_total, :xmr_amount_remaining, :xmr_num_confirmations_remaining, :xmr_recommended_mixin, :btc_num_confirmations_before_purge, :btc_num_confirmations, :btc_transaction_id
 
 
-    def initialize(uuid = nil)
-      self.uuid = uuid
-    end
+   def initialize(uuid = nil)
+     self.uuid = uuid
+   end
 
     def self.create(btc_address, btc_amount)
       new.create(btc_address, btc_amount)

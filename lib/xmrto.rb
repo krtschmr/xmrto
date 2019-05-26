@@ -1,5 +1,7 @@
 require 'xmrto/config'
 require 'xmrto/transfer'
+require 'xmrto/errors'
+require 'xmrto/quote'
 require 'xmrto/version'
 require 'httparty'
 
