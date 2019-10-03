@@ -7,13 +7,7 @@ module Xmrto
 
  class Transfer
 
-   attr_accessor :uuid, :xmr_price_btc, :state, :btc_amount, :btc_dest_address, :xmr_required_amount,
-     :xmr_receiving_address, :xmr_receiving_subaddress, :xmr_receiving_integrated_address,
-     :xmr_required_payment_id_long, :xmr_required_payment_id_short, :created_at,
-     :expires_at, :seconds_till_timeout, :xmr_amount_total, :xmr_amount_remaining,
-     :xmr_num_confirmations_remaining, :xmr_recommended_mixin, :btc_num_confirmations,
-     :btc_num_confirmations_before_purge, :btc_num_confirmations_threshold, :btc_transaction_id
-
+   attr_accessor :uuid, :state
 
    def initialize(uuid = nil)
      self.uuid = uuid
@@ -35,8 +29,16 @@ module Xmrto
     end
 
     def update
-      fetch_status.map {|attr, value| send("#{attr}=", value) }
+      fetch_status.map{|attr, value| instance_variable_set("@#{attr}", value) }
       state
+    end
+
+    def method_missing(m, *args, &block)
+      if instance_values.has_key?(m.to_s)
+        instance_values[m.to_s]
+      else
+        super
+      end
     end
 
     def testnet?
